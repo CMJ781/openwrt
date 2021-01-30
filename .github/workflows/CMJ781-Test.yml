@@ -11,7 +11,7 @@ on:
         required: false
         default: 'false'
   schedule:
-    - cron: 0 17 31 * * 
+    - cron: 0 03 * * * 
 
 jobs:
 
@@ -45,7 +45,7 @@ jobs:
         run: |
           sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
           #sed -i 's/coolsnowwolf/sirpdboy/g' ./feeds.conf.default
-          git clone https://github.com/YWWei1988/sirpdboy-package package/diy
+          git clone https://github.com/YWWei1988/281677160-package package/diy
           git clone https://github.com/YWWei1988/kenzok8-theme package/diy12
           ./scripts/feeds update -a
       - name: Update package
