@@ -11,7 +11,7 @@ on:
         required: false
         default: 'false'
   schedule:
-    - cron: 0 03 * * * 
+    - cron: 0 14 * * * 
 
 jobs:
 
@@ -92,12 +92,12 @@ jobs:
       - name: Upload Firmware
         uses: actions/upload-artifact@main
         with:
-          name: CMJ781-OpenWrt-Firmware
+          name: CMJ781-IPV6-Firmware
           path: ./new/firmware
       - name: Upload  IPK
         uses: actions/upload-artifact@main
         with:
-          name: CMJ781-OpenWrt-Ipk
+          name: CMJ781-IPV6-Ipk
           path: ./new/package
       - name: Upload firmware to cowtransfer
         run: |
