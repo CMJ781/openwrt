@@ -51,6 +51,7 @@ jobs:
           #sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
           #sed -i 's/coolsnowwolf/sirpdboy/g' ./feeds.conf.default
           git clone https://github.com/sirpdboy/sirpdboy-package package/diy
+          git clone https://github.com/YWWei1988/kenzok8-theme package/diy22
           ./scripts/feeds update -a
       - name: Update package
         working-directory: ./openwrt
