@@ -11,7 +11,7 @@ on:
         required: false
         default: 'false'
   schedule:
-    - cron: 0 07 * * * 
+    - cron: 0 14 * * * 
 
 jobs:
 
@@ -55,13 +55,13 @@ jobs:
       - name: Update package
         working-directory: ./openwrt
         run: |
-          curl -fsSL https://raw.githubusercontent.com/loso3000/other/master/patch/script/update_package_all.sh | sh
+          curl -fsSL https://raw.githubusercontent.com/CMJ781/CMJ781/master/x86-64/update_test.sh | sh
           ./scripts/feeds install -a
           chmod -R 755 .
       - name: Generate configuration file
         working-directory: ./openwrt
         run: |
-          curl -fsSL https://raw.githubusercontent.com/loso3000/other/master/patch/x86-64/allappdrv.config > .config
+          curl -fsSL https://raw.githubusercontent.com/CMJ781/CMJ781/master/x86-64/allapp_test.config > .config
           make defconfig
       - name: Make download
         working-directory: ./openwrt
@@ -92,12 +92,12 @@ jobs:
       - name: Upload Firmware
         uses: actions/upload-artifact@main
         with:
-          name: CMJ781-Test-IPV6-Firmware
+          name: CMJ781-Test-Firmware
           path: ./new/firmware
       - name: Upload  IPK
         uses: actions/upload-artifact@main
         with:
-          name: CMJ781-Test-IPV6-Ipk
+          name: CMJ781-Test-Ipk
           path: ./new/package
       - name: Upload firmware to cowtransfer
         run: |
