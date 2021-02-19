@@ -55,7 +55,7 @@ jobs:
       - name: Update package
         working-directory: ./openwrt
         run: |
-          curl -fsSL https://raw.githubusercontent.com/CMJ781/CMJ781/master/x86-64/update_test.sh | sh
+          curl -fsSL https://raw.githubusercontent.com/CMJ781/CMJ781/master/x86-64/update_781.sh | sh
           ./scripts/feeds install -a
           chmod -R 755 .
       - name: Generate configuration file
