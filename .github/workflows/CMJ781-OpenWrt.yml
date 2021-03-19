@@ -11,7 +11,7 @@ on:
         required: false
         default: 'false'
   schedule:
-    - cron: 0 06 * * * 
+    - cron: 0 06 31 * * 
 
 jobs:
 
